@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function Filters({
   searchName,
   setSearchName,
@@ -25,5 +27,12 @@ function Filters({
     </div>
   );
 }
+
+Filters.propTypes = {
+  searchName: PropTypes.string,
+  setSearchName: PropTypes.func,
+  house: PropTypes.string,
+  setHouse: PropTypes.func,
+};
 
 export default Filters;

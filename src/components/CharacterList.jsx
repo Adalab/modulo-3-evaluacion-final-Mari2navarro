@@ -1,4 +1,5 @@
 import CharacterCard from './CharacterCard';
+import PropTypes from 'prop-types';
 
 function CharacterList({ characters }) {
   if (characters.length === 0) {
@@ -15,5 +16,9 @@ function CharacterList({ characters }) {
     </ul>
   );
 }
+
+CharacterList.propTypes = {
+  characters: PropTypes.array,
+};
 
 export default CharacterList;
