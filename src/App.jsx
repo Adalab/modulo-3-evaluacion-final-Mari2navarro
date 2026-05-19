@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import CharacterCard from './components/CharacterCard';
 
 function App() {
   // Estado para guardar personajes
@@ -52,15 +53,12 @@ function App() {
         {/* Listado de personajes */}
       <ul>
         {filteredCharacters.map((character) => (
-          <li key={character.name}>
-            <h2>{character.name}</h2>
-            <p>{character.species}</p>
+          <CharacterCard
+            key={character.name}
+            character={character}
 
-            <img
-              src={character.image}
-              alt={character.name}
-            />
-          </li>
+          />
+        
         ))}
       </ul>
     </>
