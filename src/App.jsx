@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 
 import CharacterList from './components/CharacterList';
+import Filters from './components/Filters';
 
 function App() {
   // Estado para guardar personajes
@@ -31,25 +32,14 @@ function App() {
   return (
     <>
       <h1>Harry Potter Characters</h1>
-
-
-        {/*Input de búsqueda */}
-        <input
-            type="text"
-            placeholder="Search character"
-            value={searchName}
-            onChange={(ev) => setSearchName(ev.target.value)}
+      
+      <Filters
+        searchName={searchName}
+        setSearchName={setSearchName}
+        house={house}
+        setHouse={setHouse}
+        
         />
-
-        <select
-            value={house}
-            onChange={(ev) => setHouse(ev.target.value)}
-        >
-            <option value="gryffindor">Gryffindor</option>
-            <option value="slytherin">Slytherin</option>
-            <option value="ravenclaw">Ravenclaw</option>
-            <option value="hufflepuff">Hufflepuff</option>
-        </select>
 
         {/* Listado de personajes */}
        <CharacterList characters={filteredCharacters} />
