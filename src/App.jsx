@@ -47,7 +47,10 @@ function App() {
           setHouse={setHouse}
         />
 
-        <CharacterList characters={filteredCharacters} />
+        <CharacterList 
+          characters={filteredCharacters}
+          searchName={searchName} 
+        />
       </>
     }
   />

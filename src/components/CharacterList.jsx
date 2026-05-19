@@ -1,10 +1,17 @@
 import CharacterCard from './CharacterCard';
 import PropTypes from 'prop-types';
 
-function CharacterList({ characters }) {
+function CharacterList({
+  characters,
+  searchName,
+}) {
   if (characters.length === 0) {
-  return <p>No characters found</p>;
-}
+    return (
+      <p>
+        No se encontraron coincidencias con "{searchName}"
+      </p>
+    );
+  }
   return (
     <ul>
       {characters.map((character, index) => (
