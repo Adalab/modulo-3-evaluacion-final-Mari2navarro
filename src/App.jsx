@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import CharacterList from './components/CharacterList';
 import Filters from './components/Filters';
+import CharacterDetail from './components/ChatacterDetail';
 
 function App() {
   // Estado para guardar personajes
@@ -32,27 +33,30 @@ function App() {
   character.name.toLowerCase().includes(searchName.toLowerCase())
 );
   return (
-    <Routes>
-        <Route
-        path='/'
-        element={
-    <>
-      <h1>Harry Potter Characters</h1>
-      
-      <Filters
-        searchName={searchName}
-        setSearchName={setSearchName}
-        house={house}
-        setHouse={setHouse}
-        
+  <Routes>
+  <Route
+    path="/"
+    element={
+      <>
+        <h1>Harry Potter Characters</h1>
+
+        <Filters
+          searchName={searchName}
+          setSearchName={setSearchName}
+          house={house}
+          setHouse={setHouse}
         />
 
-        {/* Listado de personajes */}
-       <CharacterList characters={filteredCharacters} />
-    </>
+        <CharacterList characters={filteredCharacters} />
+      </>
     }
   />
- </Routes>
+
+  <Route
+    path="/:name"
+    element={<CharacterDetail characters={characters} />}
+  />
+</Routes>
   );
 }
 export default App;
