@@ -9,7 +9,7 @@ function CharacterDetail({ characters }) {
   );
 
   if (!foundCharacter) {
-    return <p>Character not found</p>;
+    return <p>El personaje que buscas no existe</p>;
   }
 
   return (

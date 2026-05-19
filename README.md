@@ -1,16 +1,51 @@
-# React + Vite
+# La Biblioteca de Howarts ⚡
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación desarrollada con React que permite visualizar personajes de Harry Potter utilizando la API de HP API.
 
-Currently, two official plugins are available:
+La aplicación incluye:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- listado de personajes
+- filtrado por nombre
+- filtrado por casa
+- detalle individual de cada personaje
+- rutas dinámicas con React Router
+- diseño responsive
 
-## React Compiler
+## Tecnologías utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- JavaScript
+- HTML
+- CSS
+- React Router
 
-## Expanding the ESLint configuration
+## Cómo arrancar el proyecto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Instala las dependencias:
+
+```bash
+npm install
+```
+
+Arranca el proyecto:
+
+```bash
+npm run dev
+```
+
+## Estructura de componentes
+
+- `App`
+- `Filters`
+- `CharacterList`
+- `CharacterCard`
+- `CharacterDetail`
+
+## API utilizada
+
+https://hp-api.onrender.com/
+
+## Autora
+
+Proyecto realizado por Mari Navarro 😊
