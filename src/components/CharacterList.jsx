@@ -6,9 +6,9 @@ function CharacterList({ characters }) {
 }
   return (
     <ul>
-      {characters.map((character) => (
+      {characters.map((character, index) => (
         <CharacterCard
-          key={character.name}
+          key={index}
           character={character}
         />
       ))}
