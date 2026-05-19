@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import CharacterCard from './components/CharacterCard';
+
+import CharacterList from './components/CharacterList';
 
 function App() {
   // Estado para guardar personajes
@@ -51,18 +52,8 @@ function App() {
         </select>
 
         {/* Listado de personajes */}
-      <ul>
-        {filteredCharacters.map((character) => (
-          <CharacterCard
-            key={character.name}
-            character={character}
-
-          />
-        
-        ))}
-      </ul>
+       <CharacterList characters={filteredCharacters} />
     </>
   );
 }
-
 export default App;
