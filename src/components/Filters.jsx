@@ -6,8 +6,16 @@ function Filters({
   house,
   setHouse,
 }) {
+
+  const handleSubmit = (ev) => {
+  ev.preventDefault();
+};
+
   return (
-    <div className="filters">
+    <form 
+    className="filters"
+    onSubmit={handleSubmit}
+    >
       <input
         type="text"
         placeholder="Search character"
@@ -24,7 +32,7 @@ function Filters({
         <option value="ravenclaw">Ravenclaw</option>
         <option value="hufflepuff">Hufflepuff</option>
       </select>
-    </div>
+    </form>
   );
 }
 
