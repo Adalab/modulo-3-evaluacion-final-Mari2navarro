@@ -5,7 +5,7 @@ function Filters({
   setHouse,
 }) {
   return (
-    <>
+    <div className="filters">
       <input
         type="text"
         placeholder="Search character"
@@ -22,7 +22,7 @@ function Filters({
         <option value="ravenclaw">Ravenclaw</option>
         <option value="hufflepuff">Hufflepuff</option>
       </select>
-    </>
+    </div>
   );
 }
 
