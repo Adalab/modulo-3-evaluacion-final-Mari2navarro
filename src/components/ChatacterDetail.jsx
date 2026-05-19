@@ -25,12 +25,20 @@ function CharacterDetail({ characters }) {
       alt={foundCharacter.name}
       />
 
-      <p>Species: {foundCharacter.species}</p>
+      <p>Especie: {foundCharacter.species}</p>
 
-      <p>House: {foundCharacter.house}</p>
+      <p>Casa: {foundCharacter.house}</p>
 
-      <p>Gender: {foundCharacter.gender}</p>
+      <p>Género: {foundCharacter.gender}</p>
 
+      <p>Estatus: {foundCharacter.alive ? 'Alive' :'Dead' }</p>
+
+      <p>
+         Nombre alternativo:
+        {foundCharacter.alternate_names.length > 0
+        ? foundCharacter.alternate_names.join(', ')
+        : 'None'}
+      </p>
       <Link to="/">Volver 👈</Link>
     </div>
   );
