@@ -1,20 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function CharacterCard({ character }) {
+  const {
+    name = 'Unknown character',
+    species = 'Unknown species',
+    image,
+  } = character;
+
   return (
     <li>
-      <Link to={`/${encodeURIComponent(character.name)}`}>
-        <h2>{character.name}</h2>
+      <Link to={`/${encodeURIComponent(name)}`}>
+        <h2>{name}</h2>
 
-        <p>{character.species}</p>
+        <p>{species}</p>
 
         <img
           src={
-           character.image
-            ? character.image
-            : 'https://dummyimage.com/210x295/ffffff/656565.png&text=Harry+Potter'
-}
-          alt={character.name}
+            image
+              ? image
+              : 'https://dummyimage.com/210x295/ffffff/656565.png&text=Harry+Potter'
+          }
+          alt={name}
         />
       </Link>
     </li>
