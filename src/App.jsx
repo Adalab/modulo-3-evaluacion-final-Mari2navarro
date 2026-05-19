@@ -5,24 +5,40 @@ function App() {
   // Estado para guardar personajes
   const [characters, setCharacters] = useState([]);
 
-  // Se ejecuta cuando carga la página
+  // Estado para guardar el texto del input
+  const [searchName, setSearchName] = useState('');
+
+  // useEffect se ejecuta cuando carga la página
   useEffect(() => {
     fetch('https://hp-api.onrender.com/api/characters/house/gryffindor')
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-
-        // Guardamos los datos
+    
+        // Guardamos los datos en el estado
         setCharacters(data);
       });
   }, []);
 
+  //Filtramos personajes según el texto escrito
+  const filteredCharacters = characters.filter((character) =>
+  character.name.toLowerCase().includes(searchName.toLowerCase())
+);
   return (
     <>
       <h1>Harry Potter Characters</h1>
 
+
+        {/*Input de búsqueda */}
+        <input
+            type="text"
+            placeholder="Search character"
+            value={searchName}
+            onChange={(ev) => setSearchName(ev.target.value)}
+        />
+
+        {/* Listado de personajes */}
       <ul>
-        {characters.map((character) => (
+        {filteredCharacters.map((character) => (
           <li key={character.name}>
             <h2>{character.name}</h2>
             <p>{character.species}</p>
