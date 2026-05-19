@@ -38,7 +38,7 @@ function App() {
     path="/"
     element={
       <>
-        <h1>Harry Potter Characters</h1>
+        <h1>La Biblioteca de Howarts 🪄</h1>
 
         <Filters
           searchName={searchName}
