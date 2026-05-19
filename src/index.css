@@ -1,3 +1,27 @@
 body {
   margin: 0;
+  background-color: #d3d3d3;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 20px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+li {
+  background-color: #c9a74d;
+  padding: 10px;
+}
+
+img {
+  width: 100%;
 }
