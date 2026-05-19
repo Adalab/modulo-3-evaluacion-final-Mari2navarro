@@ -13,12 +13,16 @@ function CharacterDetail({ characters }) {
   }
 
   return (
-    <>
+    <div className='detail'>
       <h2>{foundCharacter.name}</h2>
 
       <img
-        src={foundCharacter.image}
-        alt={foundCharacter.name}
+      src={
+        foundCharacter.image
+          ? foundCharacter.image
+          : 'https://placehold.co/210x295/EEE/666666/?format=svg&text=Harry+Potter'
+      }
+      alt={foundCharacter.name}
       />
 
       <p>Species: {foundCharacter.species}</p>
@@ -27,8 +31,8 @@ function CharacterDetail({ characters }) {
 
       <p>Gender: {foundCharacter.gender}</p>
 
-      <Link to="/">Volver</Link>
-    </>
+      <Link to="/">Volver 👈</Link>
+    </div>
   );
 }
 
