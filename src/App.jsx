@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 
+import { Routes, Route } from 'react-router-dom';
+
 import CharacterList from './components/CharacterList';
 import Filters from './components/Filters';
 
@@ -30,6 +32,10 @@ function App() {
   character.name.toLowerCase().includes(searchName.toLowerCase())
 );
   return (
+    <Routes>
+        <Route
+        path='/'
+        element={
     <>
       <h1>Harry Potter Characters</h1>
       
@@ -44,6 +50,9 @@ function App() {
         {/* Listado de personajes */}
        <CharacterList characters={filteredCharacters} />
     </>
+    }
+  />
+ </Routes>
   );
 }
 export default App;

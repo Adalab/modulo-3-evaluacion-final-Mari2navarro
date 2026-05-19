@@ -1,14 +1,18 @@
+import { Link } from "react-router-dom";
+
 function CharacterCard({ character }) {
   return (
     <li>
-      <h2>{character.name}</h2>
+      <Link to={`/${character.name}`}>
+        <h2>{character.name}</h2>
 
-      <p>{character.species}</p>
+        <p>{character.species}</p>
 
-      <img
-        src={character.image}
-        alt={character.name}
-      />
+        <img
+          src={character.image}
+          alt={character.name}
+        />
+      </Link>
     </li>
   );
 }
