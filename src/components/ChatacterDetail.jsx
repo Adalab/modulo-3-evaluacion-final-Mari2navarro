@@ -1,10 +1,11 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function CharacterDetail({ characters }) {
   const params = useParams();
 
   const foundCharacter = characters.find(
-    (character) => character.name === params.name
+    (character) => 
+      character.name === decodeURIComponent(params.name)
   );
 
   if (!foundCharacter) {
@@ -25,6 +26,8 @@ function CharacterDetail({ characters }) {
       <p>House: {foundCharacter.house}</p>
 
       <p>Gender: {foundCharacter.gender}</p>
+
+      <Link to="/">Volver</Link>
     </>
   );
 }
