@@ -27,11 +27,20 @@ function CharacterDetail({ characters }) {
 
       <p>Especie: {foundCharacter.species}</p>
 
-      <p>Casa: {foundCharacter.house}</p>
+      <p>Casa: 
+         {foundCharacter.house === 'Gryffindor' && ' 🦁 Gryffindor'}
+         {foundCharacter.house === 'Slytherin' && ' 🐍 Slytherin'}
+         {foundCharacter.house === 'Ravenclaw' && ' 🦅 Ravenclaw'}
+         {foundCharacter.house === 'Hufflepuff' && ' 🦡 Hufflepuff'}
+      </p>
 
-      <p>Género: {foundCharacter.gender}</p>
+      <p>
+        Género: 
+        {foundCharacter.gender === 'male' && ' 👨 Masculino'}
+        {foundCharacter.gender === 'female' && ' 👩 Femenino'}
+      </p>
 
-      <p>Estatus: {foundCharacter.alive ? 'Alive' :'Dead' }</p>
+      <p>Estatus: {foundCharacter.alive ? '🟢 Vivx' :'🔴 Muertx' }</p>
 
       <p>
          Nombre alternativo:
